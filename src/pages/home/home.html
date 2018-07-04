@@ -1,14 +1,329 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
+  <ion-navbar color="blue" >
+    <ion-title text-center>     
+      GeneQuiz App
+      <div class="time">
+          <b>{{timer}}</b>
+      </div>
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content id="quiz" padding>
+  <!-- <div text-center class="time">
+      <b>{{timer}}</b>
+  </div> -->
+ 
+ <h1 text-center>Welcome to the GeneQuiz!</h1><br>
+ <ion-item >
+  <ion-input text-center type="text" placeholder="Name" [(ngModel)]= "name"></ion-input>
+</ion-item>
+<h2 text-center>Category 1: South Africa</h2>
+<br>
+
+<ion-list>
+ <div id="soweto">
+   <b>1. What does Soweto stand for?</b>
+   <img src="https://cdn.playbuzz.com/cdn//81e52467-a59e-4c36-86c5-9fddf7d0dc30/c8703103-d78b-4b40-a6e5-75102ae394ff.jpg">
+   <ion-item >
+    <ion-label>South African Western Town</ion-label>
+    <ion-checkbox [(ngModel)]="South_African_Western_Town"></ion-checkbox>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>South Western Townships</ion-label>
+    <ion-checkbox [(ngModel)]="South_Western_Townships" [checked]="No"></ion-checkbox>
+  </ion-item>
+
+  <ion-item>
+      <ion-label>South West Town</ion-label>
+      <ion-checkbox [(ngModel)]="South_West_Town"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+        <ion-label>Soggy Western Town</ion-label>
+        <ion-checkbox [(ngModel)]="Soggy_Western_Town"></ion-checkbox>
+      </ion-item>
+ </div>
+  <br>
+  <div id="game">
+      <b>2. Which one of the following is the biggest game park?</b>
+      <img src="https://cdn.playbuzz.com/cdn//81e52467-a59e-4c36-86c5-9fddf7d0dc30/382d656a-12b8-4331-9b6a-faa1ad155df2.jpg">
+      <ion-item >
+       <ion-label>Kruger Nation Park</ion-label>
+       <ion-checkbox [(ngModel)]="Kruger_National_Park" [checked]="No"></ion-checkbox>
+     </ion-item>
+   
+     <ion-item>
+       <ion-label>Madikwe Game Reserve</ion-label>
+       <ion-checkbox [(ngModel)]="Madikwe_Game_Reserve"></ion-checkbox>
+     </ion-item>
+   
+     <ion-item>
+         <ion-label>Pilanesberg Game Reserve</ion-label>
+         <ion-checkbox [(ngModel)]="Pilanesberg_Game_Reserve"></ion-checkbox>
+       </ion-item>
+   
+       <ion-item>
+           <ion-label>Kgalagadi Transfrontier</ion-label>
+           <ion-checkbox [(ngModel)]="Kgalagadi_Transfrontier"></ion-checkbox>
+         </ion-item>
+    </div>
+    <br>
+    <div id="mandela">
+        <b>3. Nelson Mandela 18 years on this infamous island </b>
+        <img src="https://cdn.playbuzz.com/cdn//81e52467-a59e-4c36-86c5-9fddf7d0dc30/2c762414-48bf-43db-8a03-533526b271d3.jpg">
+        <ion-item >
+         <ion-label>Easter Island</ion-label>
+         <ion-checkbox [(ngModel)]="Easter_Island"></ion-checkbox>
+       </ion-item>
+     
+       <ion-item>
+         <ion-label>Marion Island</ion-label>
+         <ion-checkbox [(ngModel)]="Marion_Island"></ion-checkbox>
+       </ion-item>
+     
+       <ion-item>
+           <ion-label>Robben Island</ion-label>
+           <ion-checkbox [(ngModel)]="Robben_Island" [checked]="No"></ion-checkbox>
+         </ion-item>
+     
+         <ion-item>
+             <ion-label>Msikaba Island</ion-label>
+             <ion-checkbox [(ngModel)]="Msikaba_Island"></ion-checkbox>
+           </ion-item>
+      </div>
+      <br>
+      <div id="jozi">
+          <b>4. Johannesburg's population boomed after what was found? </b>
+          <img src="https://cdn.playbuzz.com/cdn//81e52467-a59e-4c36-86c5-9fddf7d0dc30/44b2fc55-2e1d-48b8-8396-ee57baa87d1d.jpg">
+          <ion-item >
+           <ion-label>Cocoa Beans</ion-label>
+           <ion-checkbox [(ngModel)]="Cocoa_Beans"></ion-checkbox>
+         </ion-item>
+       
+         <ion-item>
+           <ion-label>Uranium</ion-label>
+           <ion-checkbox [(ngModel)]="Uranium"></ion-checkbox>
+         </ion-item>
+       
+         <ion-item>
+             <ion-label>Gold</ion-label>
+             <ion-checkbox [(ngModel)]="Gold" [checked]="No"></ion-checkbox>
+           </ion-item>
+       
+           <ion-item>
+               <ion-label>Oil</ion-label>
+               <ion-checkbox [(ngModel)]="Oil"></ion-checkbox>
+             </ion-item>
+        </div>
+        <br>
+        <div id="flag">
+            <b>5. How mant languages are recognized in South Africa?</b>
+            <img src="https://cdn.playbuzz.com/cdn//81e52467-a59e-4c36-86c5-9fddf7d0dc30/effbe5cd-7903-41df-a548-04b04c9ec33f.jpg">
+            <ion-item >
+             <ion-label>15</ion-label>
+             <ion-checkbox [(ngModel)]="flag1"></ion-checkbox>
+           </ion-item>
+         
+           <ion-item>
+             <ion-label>4</ion-label>
+             <ion-checkbox [(ngModel)]="flag2"></ion-checkbox>
+           </ion-item>
+         
+           <ion-item>
+               <ion-label>1</ion-label>
+               <ion-checkbox [(ngModel)]="flag3"></ion-checkbox>
+             </ion-item>
+         
+             <ion-item>
+                 <ion-label>11</ion-label>
+                 <ion-checkbox [(ngModel)]="flag4" [checked]="No"></ion-checkbox>
+               </ion-item>
+          </div>
+      <br>
+      <h2 text-center>Category 2: Music</h2>
+      <br>
+      Please start with a capital letter for every answer and don't leave spaces in between words.<br>
+      <br> 
+      <b>1. What is Elvis Presley's middle name?</b>
+      <ion-item>
+       <ion-label text-center></ion-label>
+       <ion-input type="text" [(ngModel)] = "Aaron" value=""></ion-input>
+     </ion-item><br>
+     <b>2. What is the lowest male voice?</b>
+     <ion-item>
+       <ion-label text-center></ion-label>
+       <ion-input type="text" [(ngModel)] = "BassVoice" value=""></ion-input>
+     </ion-item><br>
+     <b>3. What is Madonna's full name?</b>
+     <ion-item>
+       <ion-label text-center></ion-label>
+       <ion-input type="text" [(ngModel)] = "MadonnaLouiseCiccone" value=""></ion-input>
+     </ion-item>
+     <br>
+     <b>4. What is the noisy invention of Louis Glass in 1890 called?</b>
+     <ion-item>
+       <ion-label text-center></ion-label>
+       <ion-input type="text" [(ngModel)] = "Jukebox" value=""></ion-input>
+     </ion-item>
+     <br>
+     <b>5. How many lines has a music staff (or music stave) got?</b>
+     <ion-item>
+       <ion-label text-center></ion-label>
+       <ion-input type="text" [(ngModel)] = "Fivelines" value=""></ion-input>
+     </ion-item>
+          <br>
+          <br>
+          <h2 text-center>Category 3: Science</h2>
+          <div id="gas">
+              <b>1. Brass gets discoloured in air because of the presence of which of the following gases in air?</b>
+              <ion-item >
+               <ion-label>Oxygen</ion-label>
+               <ion-checkbox [(ngModel)]="Oxygen"></ion-checkbox>
+             </ion-item>
+           
+             <ion-item>
+               <ion-label>Hydrogen sulphide</ion-label>
+               <ion-checkbox [(ngModel)]="Hydrogen_sulphide" [checked]="No"></ion-checkbox>
+             </ion-item>
+           
+             <ion-item>
+                 <ion-label>Carbon dioxide</ion-label>
+                 <ion-checkbox [(ngModel)]="Carbon_dioxide"></ion-checkbox>
+               </ion-item>
+           
+               <ion-item>
+                   <ion-label>Nitrogen</ion-label>
+                   <ion-checkbox [(ngModel)]="Nitrogen"></ion-checkbox>
+                 </ion-item>
+            </div>
+             <br>
+             <div id="metal">
+                 <b>2. Which of the following is a non-metal that remains liquid at room temperature?</b>
+                 <ion-item >
+                  <ion-label>Phosphorous</ion-label>
+                  <ion-checkbox  [(ngModel)]="Phosphorous"></ion-checkbox>
+                </ion-item>
+              
+                <ion-item>
+                  <ion-label>Bromine</ion-label>
+                  <ion-checkbox [(ngModel)]="Bromine" [checked]="No"></ion-checkbox>
+                </ion-item>
+              
+                <ion-item>
+                    <ion-label>Chlorine</ion-label>
+                    <ion-checkbox [(ngModel)]="Chlorine"></ion-checkbox>
+                  </ion-item>
+              
+                  <ion-item>
+                      <ion-label>Helium</ion-label>
+                      <ion-checkbox [(ngModel)]="Helium"></ion-checkbox>
+                    </ion-item>
+               </div>
+               <br>
+               <div id="central">
+                   <b>3. Chlorophyll is a naturally occurring chelate compound in which central metal is</b>
+                   <ion-item >
+                    <ion-label>Copper</ion-label>
+                    <ion-checkbox [(ngModel)]="copper"></ion-checkbox>
+                  </ion-item>
+                
+                  <ion-item>
+                    <ion-label>Magnesium</ion-label>
+                    <ion-checkbox [(ngModel)]="magnesium" [checked]="No"></ion-checkbox>
+                  </ion-item>
+                
+                  <ion-item>
+                      <ion-label>Iron</ion-label>
+                      <ion-checkbox [(ngModel)]="iron"></ion-checkbox>
+                    </ion-item>
+                
+                    <ion-item>
+                        <ion-label>Calcium</ion-label>
+                        <ion-checkbox [(ngModel)]="calcium"></ion-checkbox>
+                      </ion-item>
+                 </div>
+                 <br>
+                 <div id="water">
+                     <b>4. 	
+                        Chemical formula for water is? </b>
+                     <ion-item >
+                      <ion-label>	NaAlO2</ion-label>
+                      <ion-checkbox [(ngModel)]="NaAlO2"></ion-checkbox>
+                    </ion-item>
+                  
+                    <ion-item>
+                      <ion-label>H2O</ion-label>
+                      <ion-checkbox [(ngModel)]="H2O" [checked]="No"></ion-checkbox>
+                    </ion-item>
+                  
+                    <ion-item>
+                        <ion-label>Al2O3</ion-label>
+                        <ion-checkbox [(ngModel)]="Al2O3"></ion-checkbox>
+                      </ion-item>
+                  
+                      <ion-item>
+                          <ion-label>CaSiO3</ion-label>
+                          <ion-checkbox [(ngModel)]="CaSiO3"></ion-checkbox>
+                        </ion-item>
+                   </div>
+                   <br>
+                   <div id="soda">
+                       <b>5. Washing soda is the common name for?</b>
+                       <ion-item >
+                        <ion-label>Sodium carbonate</ion-label>
+                        <ion-checkbox [(ngModel)]="Sodium_carbonate" [checked]="No"></ion-checkbox>
+                      </ion-item>
+                    
+                      <ion-item>
+                        <ion-label>Calcium bicarbonate</ion-label>
+                        <ion-checkbox [(ngModel)]="Calcium_bicarbonate"></ion-checkbox>
+                      </ion-item>
+                    
+                      <ion-item>
+                          <ion-label>Sodium bicarbonate</ion-label>
+                          <ion-checkbox [(ngModel)]="Sodium_bicarbonate"></ion-checkbox>
+                        </ion-item>
+                    
+                        <ion-item>
+                            <ion-label>Calcium carbonate</ion-label>
+                            <ion-checkbox [(ngModel)]="Calcium_carbonate"></ion-checkbox>
+                          </ion-item>
+                     </div>
+                 <br>
+ </ion-list>
+
+<div *ngIf ="value" id="results">
+  <b>Name: {{name}}</b><br>
+  <br>
+  <b>Correct Answers: </b><br>
+  <b>Category 1 Answers</b><br>
+  
+  <b>Q1: {{answers}}</b><br>
+  <b>Q2: {{answer1}}</b><br>
+  <b>Q3: {{answer2}}</b><br>
+  <b>Q4: {{answer3}}</b><br>
+  <b>Q5: {{answer4}}</b><br>
+  <br>
+  <b>Category 2 Answers</b><br>
+  <b>Q1: {{Aaron}}</b><br>
+  <b>Q2: {{BassVoice}}</b><br>
+  <b>Q3: {{MadonnaLouiseCiccone}}</b><br>
+  <b>Q4: {{Jukebox}}</b><br>
+  <b>Q5: {{Fivelines}}</b><br>
+  <br>
+  <b>Category 3 Answers</b><br>
+  <b>Q1: {{answer5}}</b><br>
+  <b>Q2: {{answer6}}</b><br>
+  <b>Q3: {{answer7}}</b><br>
+  <b>Q4: {{answer8}}</b><br>
+  <b>Q5: {{answer9}}</b><br>
+  <br>
+  <b>Score: {{score}}</b><br>
+  <br>
+  <b>Thank You For Completing the GeneQuiz!</b> 
+   </div>
+<button id="submit" ion-button color="light" (click)= "onSubmit()">Submit</button>
+
 </ion-content>
